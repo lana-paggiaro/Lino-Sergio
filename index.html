@@ -55,7 +55,7 @@
         justify-content: space-between;
     }
     .navbar .logo a{
-        font-size: 2.5rem;
+        font-size: 1.5rem;
         font-weight: bold;
         font-family: Brush Script MT, Brush Script Std, cursive;
         color: #fff;
@@ -106,7 +106,7 @@
         transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
     .dropdown_menu.open{
-        height: 200px;
+        height: 240px;
     }
     .dropdown_menu li{
         padding: 0.7rem;
@@ -130,7 +130,7 @@
         color: #fff;
     }
     #hero h1{
-        font-size: 8rem;
+        font-size: 3rem;
         margin-bottom: 1rem;
         font-family: FreeMono, monospace;
     }
@@ -145,34 +145,46 @@
         .dropdown_menu{
             display: block;
         }
+        #hero h1{
+            font-size: 5rem;
+        }
+        p{
+            font-size: 4rem;
+        }
     }
     @media(max-width: 576px){
         .dropdown_menu{
             left: 2rem;
             width: unset;
         }
+        #hero h1{
+            font-size: 3rem;
+        }
+        p{
+            font-size: 2.5vmax;
+        }
     }
   </style>
 </head>
 <body>
     <!--NAVBAR-->
-    <header>
+    <header class="head">
         <div class="navbar">
             <div class="logo"><a href="#">L&S</a></div>
             <ul class="links">
-                <li><a href="hero">Home</a></li>
-                <li><a href="about">Sobre</a></li>
-                <li><a href="presents">Presentes</a></li>
+                <li><a class="azulado" href="#">Home</a></li>
+                <li><a class="azulado" href="aboutus.html">Sobre</a></li>
+                <li><a class="azulado" href="presents.html">Presentes</a></li>
             </ul>
-            <a href="#" class="action_btn">Confirmar presença</a>
+            <a href="https://www.carlamoretti.com.br/confirmacaodepresenca.php" class="action_btn" target="_blank">Confirmar presença</a>
             <div class="toggle_btn">
                 <i class="bi bi-list"></i>
             </div>
         </div>
         <div class="dropdown_menu">
-            <li><a href="hero">Home</a></li>
-            <li><a href="about">Sobre</a></li>
-            <li><a href="presents">Presentes</a></li>
+            <li><a class="azulado" href="">Home</a></li>
+            <li><a class="azulado" href="aboutus.html">Sobre</a></li>
+            <li><a class="azulado" href="presents.html">Presentes</a></li>
             <a href="#" class="action_btn">Presença</a>
         </div>
     </header>
@@ -182,7 +194,7 @@
     <main>
         <section id="hero">
             <h1>05/10/2024</h1>
-            <p>Lino e Sérgio</p>
+            <p class="cursive">Lino e Sérgio</p>
         </section>
     </main>
     <!--FIM HERO-->
