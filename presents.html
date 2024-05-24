@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lino e Sergio</title>
   <!-- CSS only -->
-  <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -19,56 +19,421 @@
         padding: 0;
         box-sizing: border-box;
         font-family: 'Open Sans', sans-serif;
-    }
-    body{
-        background-color: black;
-    }
-    a{
-        text-decoration: none;
-    }    
+    } 
     li{
         list-style: none;
     }
+    a{
+        text-decoration: none;
+        color: #fff;
+        font-size: 1rem;
+    }
+    a:hover{
+        color: lightskyblue;
+    }
+    header{
+        position: relative;
+        padding: 0 2rem;
+    }
+    .navbar{
+        width: 100%;
+        height: 60px;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .navbar .logo a{
+        font-size: 2.0rem;
+        font-weight: bold;
+        font-family: Brush Script MT, Brush Script Std, cursive;
+        color: #fff;
+    }
+    .navbar .links{
+        display: flex;
+        gap: 2rem;        
+    }
+    .navbar .toggle_btn{
+        color: #fff;
+        font-size: 1.5rem;
+        cursor: pointer;
+        display: none;
+    }
+    .action_btn{
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        padding: 0.5rem 1rem;
+        border: none;
+        outline: none;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: scale 0.2 ease;
+    }
+    .action_btn:hover{
+        scale: 1.05;
+        color: #fff;
+    }
+    .action_btn:active{
+        scale: 0.95;
+    }
+    /*DROPDOWN MENU*/
+    .dropdown_menu{
+        display: none;
+        position: absolute;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        right: 2rem;
+        top: 60px;
+        width: 300px;
+        height: 0;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        border-radius: 10px;
+        overflow: hidden;
+        transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .dropdown_menu.open{
+        height: 240px;
+    }
+    .dropdown_menu li{
+        padding: 0.7rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .dropdown_menu .action_btn{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    /*RESPONSIVIDADE*/
+    @media(max-width: 992px){
+        .navbar .links, .navbar .action_btn{
+            display: none;
+        }
+        .navbar .toggle_btn{
+            display: block;
+        }
+        .dropdown_menu{
+            display: block;
+        }
+    }
+    @media(max-width: 576px){
+        .dropdown_menu{
+            left: 2rem;
+            width: unset;
+        }
+    }
   </style>
 </head>
-<body>
+<body style="background-color: black;">
     <!--NAVBAR-->
-    <header class="head">
+    <header>
         <div class="navbar">
-            <div class="logo"><a href="#">L&S</a></div>
+            <div class="logo"><a href="#">Lino&Sérgio</a></div>
             <ul class="links">
                 <li><a class="azulado" href="index.html">Home</a></li>
                 <li><a class="azulado" href="aboutus.html">Sobre</a></li>
                 <li><a class="azulado" href="presents.html">Presentes</a></li>
             </ul>
-            <a href="attendance.html" class="action_btn">Confirmar presença</a>
+            <a href="#" class="action_btn" data-bs-toggle="modal" data-bs-target="#janelamodal">Confirmar presença</a>
             <div class="toggle_btn">
                 <i class="bi bi-list"></i>
             </div>
         </div>
         <div class="dropdown_menu">
-            <li><a class="azulado" href="index.html">Home</a></li>
+            <li><a class="azulado" href="">Home</a></li>
             <li><a class="azulado" href="aboutus.html">Sobre</a></li>
             <li><a class="azulado" href="presents.html">Presentes</a></li>
             <a href="#" class="action_btn">Presença</a>
         </div>
     </header>
-    <!--Fim da NAVBAR-->
+    <!--FIM DA NAVBAR-->
 
-    <!--Javascript-->
-    <script>
-        const toggleBtn = document.querySelector('.toggle_btn')
-        const toggleBtnIcon = document.querySelector('.toggle_btn i')
-        const dropdownMenu = document.querySelector('.dropdown_menu')
+    <div class="container pb-3">
+        <div class="row pt-4 pb-4">
+          <div class="col-md-4 col-sm-12 pt-4">
+            <div class="card" style="width: 16rem;">
+                <img src="imagens/card1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Drinks na praia em Positano</h5>
+                  <h5 class="card-title">R$ 120,00</h5>
+                  <a href="#" class="btn btn-danger">Comprar</a>
+                </div>
+              </div>
+          </div>
 
-        toggleBtn.onclick = function(){
-            dropdownMenu.classList.toggle('open')
-            const isOpen = dropdownMenu.classList.contains('open')
-            toggleBtnIcon.classList = isOpen
-            ? 'bi bi-x'
-            : 'bi bi-list'
-        }
-    </script>
-    <!--Javascript-->
+          <div class="col-md-4 col-sm-12 pt-4">
+            <div class="card" style="width: 16rem;">
+                <img src="imagens/card2.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Macarrão a bolonhesa em Bolonha</h5>
+                  <h5 class="card-title">R$ 150,00</h5>
+                  <a href="#" class="btn btn-danger">Comprar</a>
+                </div>
+              </div>
+          </div>
+
+          <div class="col-md-4 col-sm-12 pt-4">
+            <div class="card" style="width: 16rem;">
+                <img src="imagens/card3.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Pizza napolitana em Nápolis</h5>
+                  <h5 class="card-title">R$ 230,00</h5>
+                  <a href="#" class="btn btn-danger">Comprar</a>
+                </div>
+              </div>
+          </div>
+
+          <div class="col-md-4 col-sm-12 pt-4">
+            <div class="card" style="width: 16rem;">
+                <img src="imagens/card4.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Passeio de teleferico no Vulcão Etna</h5>
+                  <h5 class="card-title">R$ 270,00</h5>
+                  <a href="#" class="btn btn-danger">Comprar</a>
+                </div>
+              </div>
+          </div>
+
+          <div class="col-md-4 col-sm-12 pt-4">
+            <div class="card" style="width: 16rem;">
+                <img src="imagens/card5.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Imãs de geladeira de todas as cidades para a nossa coleção</h5>
+                  <h5 class="card-title">R$ 310,00</h5>
+                  <a href="#" class="btn btn-danger">Comprar</a>
+                </div>
+              </div>
+          </div>
+
+          <div class="col-md-4 col-sm-12 pt-4">
+            <div class="card" style="width: 16rem;">
+                <img src="imagens/card6.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Vídeo cortando spaguetti na frente do garçom</h5>
+                  <h5 class="card-title">R$ 350,00</h5>
+                  <a href="#" class="btn btn-danger">Comprar</a>
+                </div>
+              </div>
+          </div>
+
+          <div class="col-md-4 col-sm-12 pt-4">
+            <div class="card" style="width: 16rem;">
+                <img src="imagens/card7.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Roupa de frio para o Norte da Itália</h5>
+                  <h5 class="card-title">R$ 390,00</h5>
+                  <a href="#" class="btn btn-danger">Comprar</a>
+                </div>
+              </div>
+          </div>
+
+          <div class="col-md-4 col-sm-12 pt-4">
+            <div class="card" style="width: 16rem;">
+                <img src="imagens/card8.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Passeio de Gondola em Veneza</h5>
+                  <h5 class="card-title">R$ 420,00</h5>
+                  <a href="#" class="btn btn-danger">Comprar</a>
+                </div>
+              </div>
+          </div>
+
+          <div class="col-md-4 col-sm-12 pt-4">
+            <div class="card" style="width: 16rem;">
+                <img src="imagens/card9.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Visita guiada no Coliseu</h5>
+                  <h5 class="card-title">R$ 470,00</h5>
+                  <a href="#" class="btn btn-danger">Comprar</a>
+                </div>
+              </div>
+          </div>
+
+          <div class="col-md-4 col-sm-12 pt-4">
+            <div class="card" style="width: 16rem;">
+                <img src="imagens/card10.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Passeio pelo sitio arqueologico de Pompeia</h5>
+                  <h5 class="card-title">R$ 520,00</h5>
+                  <a href="#" class="btn btn-danger">Comprar</a>
+                </div>
+              </div>
+          </div>
+
+          <div class="col-md-4 col-sm-12 pt-4">
+            <div class="card" style="width: 16rem;">
+                <img src="imagens/card11.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Aluguel da Vespa</h5>
+                  <h5 class="card-title">R$ 580,00</h5>
+                  <a href="#" class="btn btn-danger">Comprar</a>
+                </div>
+              </div>
+          </div>
+
+          <div class="col-md-4 col-sm-12 pt-4">
+            <div class="card" style="width: 16rem;">
+                <img src="imagens/card12.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Vale compras em Milão</h5>
+                  <h5 class="card-title">R$ 650,00</h5>
+                  <a href="#" class="btn btn-danger">Comprar</a>
+                </div>
+              </div>
+          </div>
+
+          <div class="col-md-4 col-sm-12 pt-4">
+            <div class="card" style="width: 16rem;">
+                <img src="imagens/card13.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Ingresso para a opera em Palermo</h5>
+                  <h5 class="card-title">R$ 780,00</h5>
+                  <a href="#" class="btn btn-danger">Comprar</a>
+                </div>
+              </div>
+          </div>
+
+          <div class="col-md-4 col-sm-12 pt-4">
+            <div class="card" style="width: 16rem;">
+                <img src="imagens/card14.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">7 euros</h5>
+                  <h5 class="card-title">R$ 860,00</h5>
+                  <a href="#" class="btn btn-danger">Comprar</a>
+                </div>
+              </div>
+          </div>
+
+          <div class="col-md-4 col-sm-12 pt-4">
+            <div class="card" style="width: 16rem;">
+                <img src="imagens/card15.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Escultura de Murano em Murano</h5>
+                  <h5 class="card-title">R$ 1.000,00</h5>
+                  <a href="#" class="btn btn-danger">Comprar</a>
+                </div>
+              </div>
+          </div>
+
+          <div class="col-md-4 col-sm-12 pt-4">
+            <div class="card" style="width: 16rem;">
+                <img src="imagens/card16.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Desentortar a Torre de Pisa</h5>
+                  <h5 class="card-title">R$ 1.450,00</h5>
+                  <a href="#" class="btn btn-danger">Comprar</a>
+                </div>
+              </div>
+          </div>
+
+          <div class="col-md-4 col-sm-12 pt-4">
+            <div class="card" style="width: 16rem;">
+                <img src="imagens/card17.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Passeio de Ferrari em Maranello</h5>
+                  <h5 class="card-title">R$ 2.000,00</h5>
+                  <a href="#" class="btn btn-danger">Comprar</a>
+                </div>
+              </div>
+          </div>
+
+          <div class="col-md-4 col-sm-12 pt-4">
+            <div class="card" style="width: 16rem;">
+                <img src="imagens/card18.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Paperview da viagem com localização em tempo real</h5>
+                  <h5 class="card-title">R$ 2.750,00</h5>
+                  <a href="#" class="btn btn-danger">Comprar</a>
+                </div>
+              </div>
+          </div>
+
+          <div class="col-md-4 col-sm-12 pt-4">
+            <div class="card" style="width: 16rem;">
+                <img src="imagens/card19.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Diária no Chalet Al Foss Alp Resort</h5>
+                  <h5 class="card-title">R$ 3.500,00</h5>
+                  <a href="#" class="btn btn-danger">Comprar</a>
+                </div>
+              </div>
+          </div>
+
+          <div class="col-md-4 col-sm-12 pt-4">
+            <div class="card" style="width: 16rem;">
+                <img src="imagens/card20.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Cafezinho no aeroporto</h5>
+                  <h5 class="card-title">R$ 4.200,00</h5>
+                  <a href="#" class="btn btn-danger">Comprar</a>
+                </div>
+              </div>
+          </div>
+
+          <div class="col-md-4 col-sm-12 pt-4">
+            <div class="card" style="width: 16rem;">
+                <img src="imagens/card21.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Tirar uma foto com o poderoso chefão</h5>
+                  <h5 class="card-title">R$ 12.300,00</h5>
+                  <a href="#" class="btn btn-danger">Comprar</a>
+                </div>
+              </div>
+          </div>
+
+          <div class="col-md-4 col-sm-12 pt-4">
+            <div class="card" style="width: 16rem;">
+                <img src="imagens/card22.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Passeio de iate em Capri</h5>
+                  <h5 class="card-title">R$ 18.600,00</h5>
+                  <a href="#" class="btn btn-danger">Comprar</a>
+                </div>
+              </div>
+          </div>
+
+          <div class="col-md-4 col-sm-12 pt-4">
+            <div class="card" style="width: 16rem;">
+                <img src="imagens/card23.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Comprar a Ferrari do passeio</h5>
+                  <h5 class="card-title">R$ 1.499.999,99</h5>
+                  <a href="#" class="btn btn-danger">Comprar</a>
+                </div>
+              </div>
+          </div>
+
+          <div class="col-md-4 col-sm-12 pt-4">
+            <div class="card" style="width: 16rem;">
+                <img src="imagens/card24.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Levar a Molly na viagem</h5>
+                  <h5 class="card-title">R$ 6.980,00</h5>
+                  <a href="#" class="btn btn-danger">Comprar</a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
 </body>
+<script>
+    const toggleBtn = document.querySelector('.toggle_btn')
+    const toggleBtnIcon = document.querySelector('.toggle_btn i')
+    const dropdownMenu = document.querySelector('.dropdown_menu')
+
+    toggleBtn.onclick = function(){
+        dropdownMenu.classList.toggle('open')
+        const isOpen = dropdownMenu.classList.contains('open')
+        toggleBtnIcon.classList = isOpen
+        ? 'bi bi-x'
+        : 'bi bi-list'
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </html>
