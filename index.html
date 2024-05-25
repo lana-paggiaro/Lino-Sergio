@@ -41,7 +41,9 @@
         padding: 0 2rem;
     }
     .cursive{
-        font-family: Brush Script MT, Brush Script Std, cursive;
+        font-family: "Great Vibes", cursive;
+        font-weight: 400;
+        font-style: normal;
     }
     .navbar{
         width: 100%;
@@ -55,11 +57,14 @@
     .navbar .logo a{
         font-size: 2.0rem;
         font-weight: bold;
-        font-family: Brush Script MT, Brush Script Std, cursive;
+        font-family: "Great Vibes", cursive;
+        font-weight: 400;
+        font-style: normal;
         color: #fff;
     }
     .navbar .links{
         display: flex;
+        font-size: 2.0rem;
         gap: 2rem;        
     }
     .navbar .toggle_btn{
@@ -104,7 +109,7 @@
         transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
     .dropdown_menu.open{
-        height: 210px;
+        height: 200px;
     }
     .dropdown_menu li{
         padding: 0.8rem;
@@ -128,9 +133,8 @@
         color: #fff;
     }
     #hero h1{
-        font-size: 3rem;
+        font-size: 5rem;
         margin-bottom: 1rem;
-        font-family: FreeMono, monospace;
     }
     #hero p{
         font-size: 2.5rem;
@@ -162,7 +166,7 @@
             <div class="logo"><a href="#">Lino&Sérgio</a></div>
             <ul class="links">
                 <li><a class="azulado" href="index.html">Home</a></li>
-                <li><a class="azulado" href="aboutus.html">Sobre</a></li>
+                <li><a class="azulado" href="aboutus.html">Sobre a cerimônia</a></li>
                 <li><a class="azulado" href="presents.html">Presentes</a></li>
             </ul>
             <a href="#" class="action_btn" data-bs-toggle="modal" data-bs-target="#janelamodal">Confirmar presença</a>
@@ -179,6 +183,7 @@
     </header>
     <!--Fim da NAVBAR-->
     
+    <!--MODAL-->
     <div class="modal" id="janelamodal" tabindex="-1">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -195,13 +200,14 @@
             </div>
           </div>
         </div>
-      </div>
+    </div>
+    <!--FIM MODAL-->
 
     <!--HERO-->
     <main>
         <section id="hero">
-            <h1>05/10/2024</h1>
-            <p class="cursive">Lino e Sérgio</p>
+            <p class="cursive">Save the date</p>
+            <h1 class="cursive">05/10/2024</h1>
         </section>
     </main>
     <!--FIM HERO-->
@@ -237,5 +243,8 @@
     crossorigin="anonymous">
     </script>
     <!--Javascript-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 </body>
 </html>
