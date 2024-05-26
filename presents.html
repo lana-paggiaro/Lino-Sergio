@@ -44,6 +44,17 @@
       font-size: larger;
       font-weight: 700;
     }
+    .lista{
+      padding: 0 3rem;
+      justify-content: space-between;
+      align-items: center;
+      align-content: space-around;
+      display: flex;
+      flex-direction: row;
+    }
+    .recheio{
+      padding: 0 4rem;
+    }
     header{
       position: relative;
       padding: 0 2rem 1rem;
@@ -141,6 +152,12 @@
       header{
          padding: 0 2rem 0.3rem;
       }
+      .recheio{
+        padding: 0 1rem;
+      }
+      .espaco{
+        height: 30px;
+      }
     }
     @media(max-width: 576px){
       .dropdown_menu{
@@ -149,6 +166,12 @@
       }
       header{
         padding: 0 2rem 0.3rem;
+      }
+      .recheio{
+        padding: 0 1rem;
+      }
+      .espaco{
+        height: 30px;
       }
     }
   </style>
@@ -195,52 +218,26 @@
   </div>
   <!--FIM MODAL-->
 
-  <h2 class="text-center pt-5">Escolha o seu presente!</h3>
+  <div class="espaco"></div>
 
-  <div class="container pb-3">
+  <h2 class="text-center pt-5">Escolha o seu presente!</h2>
+
+  <div class="espaco"></div>
+
+  <div class="lista pb-3">
     <div class="row pt-4 pb-4">
-      <div class="col-md-4 col-sm-12 pt-4">
-        <div class="card" style="width: 16rem;">
+      <div class="col-md-4 col-sm-12 pt-4 recheio">
+        <div class="card">
             <img src="imagens/card1.jpg" class="card-img-top" alt="...">
-            <div class="card-body border border-dark-subtle">
+            <div class="card-body">
               <p class="desc">Drinks na praia em Positano<br>
               <span class="preco">R$ 120,00</span></p>
-              <a href="#" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#janelamodal">Comprar</a>
-            </div>
-          </div>
-      </div>
-      <div class="col-md-4 col-sm-12 pt-4">
-        <div class="card" style="width: 16rem;">
-            <img src="imagens/card2.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="desc">Macarrão a bolonhesa em Bolonha <br>
-              <span class="preco">R$ 150,00</span></p> 
               <a href="#" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#janelamodal">Comprar</a>
             </div>
           </div>
       </div>
-      <div class="col-md-4 col-sm-12 pt-4">
-        <div class="card" style="width: 16rem;">
-            <img src="imagens/card3.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="desc">Pizza napolitana em Nápolis <br>
-              <span class="preco">R$ 230,00</span></p> 
-              <a href="#" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#janelamodal">Comprar</a>
-            </div>
-          </div>
-      </div>
-      <div class="col-md-4 col-sm-12 pt-4">
-        <div class="card" style="width: 16rem;">
-            <img src="imagens/card4.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="desc">Passeio de teleferico no Vulcão Etna <br>
-              <span class="preco">R$ 270,00</span></p>
-              <a href="#" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#janelamodal">Comprar</a>
-            </div>
-          </div>
-      </div>
-      <div class="col-md-4 col-sm-12 pt-4">
-        <div class="card" style="width: 16rem;">
+      <div class="col-md-4 col-sm-12 pt-4 recheio">
+        <div class="card"  >
             <img src="imagens/card5.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="desc">Imãs de geladeira de todas as cidades para a nossa coleção <br>
@@ -249,8 +246,38 @@
             </div>
           </div>
       </div>
-      <div class="col-md-4 col-sm-12 pt-4">
-        <div class="card" style="width: 16rem;">
+      <div class="col-md-4 col-sm-12 pt-4 recheio">
+        <div class="card">
+            <img src="imagens/card3.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="desc">Pizza napolitana em Nápolis <br>
+              <span class="preco">R$ 230,00</span></p> 
+              <a href="#" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#janelamodal">Comprar</a>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-4 col-sm-12 pt-4 recheio">
+        <div class="card">
+            <img src="imagens/card4.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="desc">Passeio de teleferico no Vulcão Etna <br>
+              <span class="preco">R$ 270,00</span></p>
+              <a href="#" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#janelamodal">Comprar</a>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-4 col-sm-12 pt-4 recheio">
+        <div class="card">
+            <img src="imagens/card2.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="desc">Macarrão a bolonhesa em Bolonha <br>
+              <span class="preco">R$ 150,00</span></p> 
+              <a href="#" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#janelamodal">Comprar</a>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-4 col-sm-12 pt-4 recheio">
+        <div class="card"  >
             <img src="imagens/card6.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="desc">Vídeo cortando spaguetti na frente do garçom <br>
@@ -259,8 +286,8 @@
             </div>
           </div>
       </div>
-      <div class="col-md-4 col-sm-12 pt-4">
-        <div class="card" style="width: 16rem;">
+      <div class="col-md-4 col-sm-12 pt-4 recheio">
+        <div class="card"  >
             <img src="imagens/card7.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="desc">Roupa de frio para o Norte da Itália <br>
@@ -269,8 +296,8 @@
             </div>
           </div>
       </div>
-      <div class="col-md-4 col-sm-12 pt-4">
-        <div class="card" style="width: 16rem;">
+      <div class="col-md-4 col-sm-12 pt-4 recheio">
+        <div class="card"  >
             <img src="imagens/card8.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="desc">Passeio de Gondola em Veneza <br>
@@ -279,8 +306,8 @@
             </div>
           </div>
       </div>
-      <div class="col-md-4 col-sm-12 pt-4">
-        <div class="card" style="width: 16rem;">
+      <div class="col-md-4 col-sm-12 pt-4 recheio">
+        <div class="card"  >
             <img src="imagens/card9.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="desc">Visita guiada no Coliseu <br>
@@ -289,8 +316,8 @@
             </div>
           </div>
       </div>
-      <div class="col-md-4 col-sm-12 pt-4">
-        <div class="card" style="width: 16rem;">
+      <div class="col-md-4 col-sm-12 pt-4 recheio">
+        <div class="card"  >
             <img src="imagens/card10.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="desc">Passeio pelo sitio arqueologico de Pompeia <br>
@@ -299,8 +326,8 @@
             </div>
           </div>
       </div>
-      <div class="col-md-4 col-sm-12 pt-4">
-        <div class="card" style="width: 16rem;">
+      <div class="col-md-4 col-sm-12 pt-4 recheio">
+        <div class="card"  >
             <img src="imagens/card11.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="desc">Aluguel da Vespa <br>
@@ -309,8 +336,8 @@
             </div>
           </div>
       </div>
-      <div class="col-md-4 col-sm-12 pt-4">
-        <div class="card" style="width: 16rem;">
+      <div class="col-md-4 col-sm-12 pt-4 recheio">
+        <div class="card"  >
             <img src="imagens/card12.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="desc">Vale compras em Milão <br>
@@ -319,8 +346,8 @@
             </div>
           </div>
       </div>
-      <div class="col-md-4 col-sm-12 pt-4">
-        <div class="card" style="width: 16rem;">
+      <div class="col-md-4 col-sm-12 pt-4 recheio">
+        <div class="card"  >
             <img src="imagens/card13.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="desc">Ingresso para a opera em Palermo <br>
@@ -329,8 +356,8 @@
             </div>
           </div>
       </div>
-      <div class="col-md-4 col-sm-12 pt-4">
-        <div class="card" style="width: 16rem;">
+      <div class="col-md-4 col-sm-12 pt-4 recheio">
+        <div class="card"  >
             <img src="imagens/card14.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="desc">7 euros <br>
@@ -339,8 +366,8 @@
             </div>
           </div>
       </div>
-      <div class="col-md-4 col-sm-12 pt-4">
-        <div class="card" style="width: 16rem;">
+      <div class="col-md-4 col-sm-12 pt-4 recheio">
+        <div class="card"  >
             <img src="imagens/card15.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="desc">Escultura de Murano em Murano <br>
@@ -349,8 +376,8 @@
             </div>
           </div>
       </div>
-      <div class="col-md-4 col-sm-12 pt-4">
-        <div class="card" style="width: 16rem;">
+      <div class="col-md-4 col-sm-12 pt-4 recheio">
+        <div class="card"  >
             <img src="imagens/card16.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="desc">Desentortar a Torre de Pisa <br>
@@ -359,8 +386,8 @@
             </div>
           </div>
       </div>
-      <div class="col-md-4 col-sm-12 pt-4">
-        <div class="card" style="width: 16rem;">
+      <div class="col-md-4 col-sm-12 pt-4 recheio">
+        <div class="card"  >
             <img src="imagens/card17.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="desc">Passeio de Ferrari em Maranello <br>
@@ -369,8 +396,8 @@
             </div>
           </div>
       </div>
-      <div class="col-md-4 col-sm-12 pt-4">
-        <div class="card" style="width: 16rem;">
+      <div class="col-md-4 col-sm-12 pt-4 recheio">
+        <div class="card"  >
             <img src="imagens/card18.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="desc">Paperview da viagem com localização em tempo real <br>
@@ -379,8 +406,8 @@
             </div>
           </div>
       </div>
-      <div class="col-md-4 col-sm-12 pt-4">
-        <div class="card" style="width: 16rem;">
+      <div class="col-md-4 col-sm-12 pt-4 recheio">
+        <div class="card"  >
             <img src="imagens/card19.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="desc">Diária no Chalet Al Foss Alp Resort <br>
@@ -389,8 +416,8 @@
             </div>
           </div>
       </div>
-      <div class="col-md-4 col-sm-12 pt-4">
-        <div class="card" style="width: 16rem;">
+      <div class="col-md-4 col-sm-12 pt-4 recheio">
+        <div class="card"  >
             <img src="imagens/card20.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="desc">Cafezinho no aeroporto <br>
@@ -399,8 +426,8 @@
             </div>
           </div>
       </div>
-      <div class="col-md-4 col-sm-12 pt-4">
-        <div class="card" style="width: 16rem;">
+      <div class="col-md-4 col-sm-12 pt-4 recheio">
+        <div class="card">
             <img src="imagens/card21.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="desc">Tirar uma foto com o poderoso chefão <br>
@@ -409,8 +436,8 @@
             </div>
           </div>
       </div>
-      <div class="col-md-4 col-sm-12 pt-4">
-        <div class="card" style="width: 16rem;">
+      <div class="col-md-4 col-sm-12 pt-4 recheio">
+        <div class="card">
             <img src="imagens/card22.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="desc">Passeio de iate em Capri <br>
@@ -419,8 +446,8 @@
             </div>
           </div>
       </div>
-      <div class="col-md-4 col-sm-12 pt-4">
-        <div class="card" style="width: 16rem;">
+      <div class="col-md-4 col-sm-12 pt-4 recheio">
+        <div class="card">
             <img src="imagens/card23.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="desc">Comprar a Ferrari do passeio <br>
@@ -429,9 +456,9 @@
             </div>
           </div>
       </div>
-      <div class="col-md-4 col-sm-12 pt-4">
-        <div class="card" style="width: 16rem;">
-            <img src="imagens/card24.jpg" class="card-img-top" alt="...">
+      <div class="col-md-4 col-sm-12 pt-4 recheio">
+        <div class="card">
+            <img src="imagens/molly.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="desc">Levar a Molly na viagem <br>
               <span class="preco">R$ 6.980,00</span></p>
