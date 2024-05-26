@@ -1,16 +1,4 @@
-/* CLASSES */
-
-
 /*Texto*/
-
-.azulado{
-    text-decoration: none;
-    color: #fff;
-    font-size: 1rem;
-}
-.azulado:hover{
-    color: lightskyblue;
-}
 .strong{
     font-weight: bolder;
     font-size: 30px;
